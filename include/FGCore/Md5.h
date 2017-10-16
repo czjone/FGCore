@@ -10,11 +10,11 @@ using namespace std;
 /*!
  * Manage MD5.
  */
-class MD5
+class MD5   
 {
 private:
-#define uint8  unsigned char
-#define uint32 unsigned long int
+#   define uint8  unsigned char
+#   define uint32 unsigned long int
     
     struct md5_context
     {
