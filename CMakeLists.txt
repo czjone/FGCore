@@ -1,19 +1,20 @@
-#cmake最低版本需求，不加入此行会受到警告信息
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-PROJECT(FGSNode) #项目名称
-#IF (WIN32 AND NOT ANDROID)
-#IF (WIN32)
-#	ADD_DEFINITIONS(-DWIN32)
-#ELSEIF(ANDROID)
-#	ADD_DEFINITIONS(-DANDROID)
-#ELSE()
-#	ADD_DEFINITIONS(-DIOS -DIOS11)
-#ENDIF()
-#把当前目录(.)下所有源代码文件和头文件加入变量SRC_LIST
-#AUX_SOURCE_DIRECTORY(. SRC_LIST)
+PROJECT(FGCore)
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
 AUX_SOURCE_DIRECTORY(src SRC_LIST)
-#生成应用程序 FGSNode (生成可执行文件)
-#ADD_LIBRARY(libname [SHARED|STATIC|MODULE][EXCLUDE_FROM_ALL]source1 source2 ... sourceN)
-#ADD_EXECUTABLE(FGSNode ${SRC_LIST})
-#ADD_LIBRARY(FGSNode SHARED ${SRC_LIST})
-ADD_LIBRARY(FGSNode STATIC ${SRC_LIST})
+ADD_LIBRARY(FGCore STATIC ${SRC_LIST})
+
+#c++ 11 supports
+include(CheckCXXCompilerFlag)  
+CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)  
+CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)  
+if(COMPILER_SUPPORTS_CXX11)  
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")  
+elseif(COMPILER_SUPPORTS_CXX0X)  
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")  
+else()  
+     message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")  
+endif()  

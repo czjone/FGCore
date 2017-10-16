@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libFGCore.a  CMakeFiles/FGCore.dir/src/base/Console.cpp.o CMakeFiles/FGCore.dir/src/base/Log.cpp.o CMakeFiles/FGCore.dir/src/base/Stringext.cpp.o CMakeFiles/FGCore.dir/src/base/md5.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libFGCore.a

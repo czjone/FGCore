@@ -3,27 +3,27 @@
  * by Christophe Devine <devine@cr0.net>;
  * this program is licensed under the GPL.
  */
-#include "md5.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "types.h"
-#include "Config.h"
+#include <FGCore/Types.h>
+#include <FGCore/Config.h>
+#include <FGCore/Md5.h>
 
-#define GET_UINT32(n,b,i)                                      \
-{                                                                                      \
-	(n) = (uint32)((uint8 *)b)[(i)]                                 \
-	| (((uint32)((uint8 *)b)[(i)+1]) << 8)                  \
-	| (((uint32)((uint8 *)b)[(i)+2]) << 16)                \
-	| (((uint32)((uint8 *)b)[(i)+3]) << 24);               \
+#define GET_UINT32(n,b,i)                                      							\
+{                                                                                      	\
+	(n) = (uint32)((uint8 *)b)[(i)]                                 					\
+	| (((uint32)((uint8 *)b)[(i)+1]) << 8)                  							\
+	| (((uint32)((uint8 *)b)[(i)+2]) << 16)                								\
+	| (((uint32)((uint8 *)b)[(i)+3]) << 24);               								\
 }
 
-#define PUT_UINT32(n,b,i)                                              \
-{                                                                                              \
-	(((uint8 *)b)[(i)]) = (uint8)(((n)) & 0xFF);             \
-	(((uint8 *)b)[(i)+1]) = (uint8)(((n) >> 8) & 0xFF);      \
-	(((uint8 *)b)[(i)+2]) = (uint8)(((n) >> 16) & 0xFF);     \
-	(((uint8 *)b)[(i)+3]) = (uint8)(((n) >> 24) & 0xFF);     \
+#define PUT_UINT32(n,b,i)                                              					\
+{                                                                        				\
+	(((uint8 *)b)[(i)]) = (uint8)(((n)) & 0xFF);             							\
+	(((uint8 *)b)[(i)+1]) = (uint8)(((n) >> 8) & 0xFF);      							\
+	(((uint8 *)b)[(i)+2]) = (uint8)(((n) >> 16) & 0xFF);     							\
+	(((uint8 *)b)[(i)+3]) = (uint8)(((n) >> 24) & 0xFF);     							\
 }
 
 //extern pthread_mutex_t mutexMemory;
@@ -61,9 +61,9 @@ void MD5::md5_process(struct md5_context *ctx, uint8 data[64])
 
 #define S(x,n) ((x << n) | ((x & 0xFFFFFFFF) >> (32 - n)))
 
-#define P(a,b,c,d,k,s,t)                                    \
+#define P(a,b,c,d,k,s,t)                                    					\
 	{                                                                           \
-	a += F(b, c, d) + X[k] + t; a = S(a, s) + b;      \
+		a += F(b, c, d) + X[k] + t; a = S(a, s) + b;      						\
 	}
 
 	A = ctx->state[0];
@@ -274,7 +274,7 @@ int _httoi(const char *value)
 	int result = 0;
 	if (*s == '0' && *(s + 1) == 'X') s += 2;
 	bool firsttime = true;
-	while (*s != '/0')
+	while (*s != '\0')
 	{
 		bool found = false;
 		for (int i = 0; i < HexMapL; i++)

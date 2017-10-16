@@ -1,8 +1,9 @@
-#include "Console.h"
-#include "../Core/stringext.h"
+#include <FGCore/Console.h>
+#include <FGCore/Stringext.h>
 #include <algorithm>
+#include <FGCore/Log.h>
 using namespace ConsleTools;
-using namespace Core;
+using namespace FGCore;
 
 Console::Console(int c,char** args):mArgsMap(nullptr){
 	mArgsMap = new ArgsMap();
@@ -10,7 +11,7 @@ Console::Console(int c,char** args):mArgsMap(nullptr){
 }
 
 Console::~Console(){
-	DELETE(this->mArgsMap);
+	FG_DELETE(this->mArgsMap);
 }
 
 bool Console::CheckArg(std::string key,std::string tagArg) const
@@ -59,7 +60,7 @@ void Console::initArgs(int c,char **args) const
 			auto itr = this->mArgsMap->find(key);
 			if (itr == this->mArgsMap->end())
 			{
-				LOG("²ÎÊý´íÎó£¡ ");
+				LOGD("argment error!");
 				break;
 			}
 			itr->second.push_back(arg);
