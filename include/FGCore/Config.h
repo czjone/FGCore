@@ -34,4 +34,6 @@
 #	define FG_TARGET_PLATFORM FG_TARGET_LINUX
 #endif
 
+using namespace std;
+
 #endif
