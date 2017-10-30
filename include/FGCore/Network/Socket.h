@@ -62,25 +62,6 @@ namespace FGSocket {
 		virtual ~Server();
 
 		virtual int Accept();
-
-	public:
-
-		class OnError : public EventHandler{
-
-		};
-
-		class OnConnected : public EventHandler{
-
-		};
-
-		class OnShutDOWN : public EventHandler {
-
-		};
-
-		class OnERROR : public EventHandler {
-
-		};
-
 	};
 };
 
