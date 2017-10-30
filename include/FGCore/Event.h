@@ -12,7 +12,7 @@ namespace FGCore {
 	class EventDispatcher;
 
 	class EventArgs{
-
+		friend class EventDispatcher;
 	public:
 
 		virtual ~EventArgs(void);
@@ -42,7 +42,7 @@ namespace FGCore {
 	};
 
 	class EventHandler {
-
+		friend class EventDispatcher;
 	public:
 
 		virtual ~EventHandler();
@@ -62,7 +62,7 @@ namespace FGCore {
 
 	protected:
 
-		virtual void Dispatch(void* args);
+		virtual void Dispatch(int type,void* args = nullptr);
 
 	private:
 

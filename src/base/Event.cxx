@@ -1,6 +1,3 @@
-#ifndef __FG_CORE_EVENT_H
-#define __FG_CORE_EVENT_H 1
-
 #include <FGCore/Event.h>
 
 using namespace FGCore;
@@ -24,26 +21,23 @@ void EventDispatcher::addEventlistener(int type,EventHandler * handler){
 	EventList::iterator itr = events.find(type);
 	if(itr == events.end()){
 		std::list<EventHandler*> handlers;
-		events[type] = handler;
-		itr = events[type];
+		//events[type]= handler;
+		events.insert(std::make_pair(type, handlers));
+		itr = events.find(type);
 	}
-	itr.push_back(handler);
+	(itr->second).push_back(handler);
 }
 
 void EventDispatcher::removeEventlistener(int type,EventHandler* handler){
 	EventList::iterator itr = events.find(type);
 	if(itr == events.end()) return;
-	itr.erase(handler);
+	itr->second.remove(handler);
 }
 
- void EventDispatcher::Dispatch(void * args){
+ void EventDispatcher::Dispatch(int type,void * args){
  	EventList::iterator itr = events.find(type);
  	if(itr == events.end()) return;
- 	std::list<list> &evts = itr.second;
- 	EventArgs eArgs;
- 	eArgs.sender = this;
- 	eArgs.args = args;
- 	for(auto &eItr:evts){
- 		eItr->handler(eArgs);
- 	}
+ 	std::list<EventHandler*> &evts = itr->second;
+ 	EventArgs eArgs(this,args);
+ 	for(auto &eItr:evts) eItr->Handle(eArgs);
  }

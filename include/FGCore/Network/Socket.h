@@ -44,6 +44,14 @@ namespace FGSocket {
 	};
 
 	class Server {
+
+	public:
+		typedef enum {
+			ON_CLIENT_CONNECTED,
+			ON_DISCONNECT,
+			ON_SHUTDOWN,
+			ON_ERROR,
+		} EVENTType;
 	
 	protected:
 
@@ -54,6 +62,25 @@ namespace FGSocket {
 		virtual ~Server();
 
 		virtual int Accept();
+
+	public:
+
+		class OnError : public EventHandler{
+
+		};
+
+		class OnConnected : public EventHandler{
+
+		};
+
+		class OnShutDOWN : public EventHandler {
+
+		};
+
+		class OnERROR : public EventHandler {
+
+		};
+
 	};
 };
 
