@@ -10,9 +10,10 @@ AUX_SOURCE_DIRECTORY(src/network SRC_LIST)
 AUX_SOURCE_DIRECTORY(src SRC_LIST)
 ADD_LIBRARY(FGCore STATIC ${SRC_LIST})
 
-#for mac system.
-#add_compile_options(-x objective-c++)
-#set(CMAKE_EXE_LINKER_FLAGS "-framework CFNetwork.framework")
+IF (APPLE)
+	add_compile_options(-x objective-c++)
+	set(CMAKE_EXE_LINKER_FLAGS "-framework CFNetwork.framework")
+ENDIF(APPLE)
 
 #c++ 11 supports
 include(CheckCXXCompilerFlag)  
