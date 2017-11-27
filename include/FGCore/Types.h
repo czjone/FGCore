@@ -1,34 +1,24 @@
-#ifndef TYPES_H
-#define TYPES_H 1
+#ifndef FGCORE_TYPES_H
+#define FGCORE_TYPES_H 1
 
-#include "Config.h"
-//types
-//#if(ARCHITECTURE_DEF==ARCHITECTURE_64)
-//	typedef short 				Int32;
-//	typedef int 				Int64;
-//	typedef unsigned short 		UInt32;
-//	typedef unsigned int 		UInt64;
-//	typedef unsigned char* 		cstring;
-//	typedef unsigned char		byte;
-//	typedef unsigned char* 		bytes;
-//	typedef bool		 		Bool;
-//	typedef Int32				State;
-//#else
-	typedef int 				Int32;
-	typedef long 				Int64;
-	typedef unsigned int 		UInt32;
-	typedef unsigned int 		UInt64;
-	typedef unsigned char* 		cstring;
-	typedef unsigned char		byte;
-	typedef unsigned char* 		bytes;
-	typedef bool		 		Bool;
-	typedef Int32				State;
-//#endif
+#include <FGCore/Config.h>
+
+/** A 64 - bit architecture and  32 - bit architecture for gcc 4.1*/
+
+typedef unsigned  char 			FG_UByte;
+typedef char 		   			FG_Byte;
+typedef short 					FG_Short;
+typedef int						FG_Int32;
+typedef unsigned  char  		FG_UInt32;
+typedef long long 				FG_Long;
+typedef unsigned  long long 	FG_ULong;
+typedef float					FG_Float;
+typedef double 					FG_Double;
+typedef FG_Int32 				FG_State;
 
 
-	typedef enum {
-		Success =				 0	,
-		UNKnowError =			-1	,
-	} StateVal;
+/** errors */
+#define FG_SUCCESS 				0x00000000
+#define FG_UNKNOW_ERROR 		-0x00000001
 
-#endif /*end TYPES_H*/
+#endif /*end FGCORE_TYPES_H*/

@@ -1,10 +1,10 @@
-#ifndef __fgame_core_config_h
-#define __fgame_core_config_h 1
+#ifndef FGCORE_CONFIG_H
+#define FGCORE_CONFIG_H 1
 
 //define platform
 #define FG_TARGET_PLATFORM 			0
 #define FG_TARGET_PLATFORM_IOS 		1
-#define FG_TARGET_PLATFOMR_MAC 		2
+#define FG_TARGET_PLATFORM_MAC 		2
 #define FG_TARGET_PLATFORM_ANDROID 	3
 #define FG_TARGET_WIN 				4
 #define FG_TARGET_LINUX 			5
@@ -16,7 +16,7 @@
 
 #ifdef MAC
 #	undef FG_TARGET_PLATFORM
-#	define FG_TARGET_PLATFORM FG_TARGET_PLATFOMR_MAC
+#	define FG_TARGET_PLATFORM FG_TARGET_PLATFORM_MAC
 #endif
 
 #ifdef IOS
@@ -33,7 +33,4 @@
 #	undef FG_TARGET_PLATFORM
 #	define FG_TARGET_PLATFORM FG_TARGET_LINUX
 #endif
-
-using namespace std;
-
 #endif

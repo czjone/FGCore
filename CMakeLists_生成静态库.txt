@@ -8,14 +8,7 @@ AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
 AUX_SOURCE_DIRECTORY(src/network/socket SRC_LIST)
 AUX_SOURCE_DIRECTORY(src/network SRC_LIST)
 AUX_SOURCE_DIRECTORY(src SRC_LIST)
-ADD_LIBRARY(FGCore STATIC ${SRC_LIST}
-        include/FGCore/Config.h
-        include/FGCore/Data.h
-        include/FGCore/Error.h
-        include/FGCore/Log.h
-        include/FGCore/Macros.h
-        include/FGCore/Types.h
-        )
+ADD_LIBRARY(FGCore STATIC ${SRC_LIST})
 
 IF (APPLE)
 	add_compile_options(-x objective-c++)
