@@ -4,9 +4,12 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/external
 )
-AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
-AUX_SOURCE_DIRECTORY(src/network/socket SRC_LIST)
-AUX_SOURCE_DIRECTORY(src/network SRC_LIST)
+# set compile files by src folder.
+# AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
+# AUX_SOURCE_DIRECTORY(src/network/socket SRC_LIST)
+# AUX_SOURCE_DIRECTORY(src/network SRC_LIST)
+# AUX_SOURCE_DIRECTORY(src SRC_LIST)
+
 AUX_SOURCE_DIRECTORY(src SRC_LIST)
 ADD_LIBRARY(FGCore STATIC ${SRC_LIST})
 

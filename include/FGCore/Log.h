@@ -1,11 +1,6 @@
 #ifndef FGCORE_LOG_H
 #define FGCORE_LOG_H
 
-#include <FGCore/Config.h>
-#include <FGCore/Macros.h>
-#include <ASSERT.h>
-#include <stdio.h>
-
 #define LOG_TAG "FG PRINT"
 
 FG_NS_BEGIN
