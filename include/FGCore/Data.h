@@ -6,9 +6,7 @@
 
 FG_NS_BEGIN	
 	
-	class Data {
-		
-	};
+
 
 FG_NS_END
 
