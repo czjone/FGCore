@@ -2,4 +2,4 @@
 
 
 1.dependent
-*[gtest](https://github.com/czjone/gtest.git) 
+* [gtest](https://github.com/czjone/gtest.git) 
