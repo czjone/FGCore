@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 PROJECT(FGCore)
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/network/socket
+  ${CMAKE_CURRENT_SOURCE_DIR}/external
 )
 AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
 AUX_SOURCE_DIRECTORY(src/network/socket SRC_LIST)
