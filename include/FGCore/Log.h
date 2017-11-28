@@ -1,6 +1,8 @@
 #ifndef FGCORE_LOG_H
 #define FGCORE_LOG_H
 
+#include <FGCore/Macros.h>
+
 #define LOG_TAG "FG PRINT"
 
 FG_NS_BEGIN
@@ -13,26 +15,26 @@ FG_NS_BEGIN
 
     inline void logd(const char * format, ...)
     {
-        va_list args;
-        va_start(args, format);
-        _logd(format, args);
-        va_end(args);
+        // va_list args;
+        // va_start(args, format);
+        // _logd(format, args);
+        // va_end(args);
     };
 
     inline void loge(const char * format, ...)
     {
-        va_list args;
-        va_start(args, format);
-        _loge(format, args);
-        va_end(args);
+        // va_list args;
+        // va_start(args, format);
+        // _loge(format, args);
+        // va_end(args);
     };
 
     inline void save_e(const char * format, ...)
     {
-        va_list args;
-        va_start(args, format);
-        save_e(format, args);
-        va_end(args);
+        // va_list args;
+        // va_start(args, format);
+        // save_e(format, args);
+        // va_end(args);
     };
 
 FG_NS_END

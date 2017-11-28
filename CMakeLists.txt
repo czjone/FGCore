@@ -1,22 +1,35 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 PROJECT(FGCore)
+
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/external
+  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/
 )
+
 # set compile files by src folder.
 # AUX_SOURCE_DIRECTORY(src/base SRC_LIST)
 # AUX_SOURCE_DIRECTORY(src/network/socket SRC_LIST)
 # AUX_SOURCE_DIRECTORY(src/network SRC_LIST)
 # AUX_SOURCE_DIRECTORY(src SRC_LIST)
 
+#FGCore
 AUX_SOURCE_DIRECTORY(src SRC_LIST)
 ADD_LIBRARY(FGCore STATIC ${SRC_LIST})
 
-IF (APPLE)
-	add_compile_options(-x objective-c++)
-	set(CMAKE_EXE_LINKER_FLAGS "-framework CFNetwork.framework")
-ENDIF(APPLE)
+#FGCore Gtest
+set(GTEST_FGCORE_SRCS
+	test/fgtest-all.cc
+	external/gtest/src/gtest-all.cc
+	external/gtest/src/gtest_main.cc
+)
+add_executable(FGCoreGTest ${GTEST_FGCORE_SRCS})
+
+# IF (APPLE)
+# 	add_compile_options(-x objective-c++)
+# 	set(CMAKE_EXE_LINKER_FLAGS "-framework CFNetwork.framework")
+# ENDIF(APPLE)
 
 #c++ 11 supports
 include(CheckCXXCompilerFlag)  

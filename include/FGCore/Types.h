@@ -4,7 +4,7 @@
 /** A 64 - bit architecture and  32 - bit architecture for gcc 4.1*/
 
 typedef unsigned  char 			FG_UByte;
-typedef unsigned  char* 		FG_CSTRING;
+typedef const  char* 			FG_CSTRING;
 typedef char 		   			FG_Byte;
 typedef short 					FG_Short;
 typedef int						FG_Int32;

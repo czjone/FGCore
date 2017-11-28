@@ -1,6 +1,10 @@
 #ifndef FGCORE_ERROR_H
 #define FGCORE_ERROR_H 1
 
+#include <FGCore/Macros.h>
+#include <FGCore/Types.h>
+#include <string>
+
 FG_NS_BEGIN
 
     class Error {
