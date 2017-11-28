@@ -4,6 +4,12 @@
 #include <FGCore/Types.h>
 #include <FGCore/Config.h>
 
+FG_NS_BEGIN	
+	
+	class Data {
+		
+	};
 
+FG_NS_END
 
 #endif //FGCORE_DATA_H
