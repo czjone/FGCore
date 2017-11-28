@@ -18,6 +18,6 @@ typedef FG_Int32 				FG_State;
 
 /** errors */
 #define FG_SUCCESS 				0x00000000
-#define FG_UNKNOW_ERROR 		-0x00000001
+#define FG_FAIL 				-0x00000001
 
 #endif /*end FGCORE_TYPES_H*/
