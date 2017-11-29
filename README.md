@@ -10,12 +10,12 @@
   * Distributed server :
      https://github.com/czjone/FGServer
     
-1. test dependent
+3. test dependent
 
 * [gtest](https://github.com/czjone/gtest-1.git) 
 * [protobuffer](https://github.com/czjone/protobuffer.git)
 
-2. static lib dependent
+4. static lib dependent
 
 # build
 
