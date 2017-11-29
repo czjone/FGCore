@@ -13,8 +13,7 @@
 
 # Windows
 1. dependent soft.
-* install Cmake and add home path to supports command line.
-* install Cygwin and add home path to supports command line.s
+* install gcc and g++ and cmake with cygwin on wondow 7 or later.
 
 # Logs
 
