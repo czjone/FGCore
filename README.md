@@ -9,9 +9,9 @@
 
 # build
 
-#Mac OS
+# Mac OS
 
-#Windows
+# Windows
 1. dependent soft.
 * install Cmake and add home path to supports command line.
 * install Cygwin and add home path to supports command line.s
