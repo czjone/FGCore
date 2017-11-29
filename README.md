@@ -1,5 +1,4 @@
 # FGCore
----------------------------------------------------------------------
 
 1.test dependent
 
@@ -8,8 +7,7 @@
 
 2.static lib dependent
 
-#build
----------------------------------------------------------------------
+# build
 
 #Mac OS
 
@@ -18,15 +16,13 @@
 * install Cmake and add home path to supports command line.
 * install Cygwin and add home path to supports command line.s
 
-#Logs
----------------------------------------------------------------------
+# Logs
 * v0.0.1
 [add] add unite test with gtest.
 [add] add auto build script.
 [add] add clsocket to my project.
 
-#Contact us
----------------------------------------------------------------------
-QQ:371741579
-email:czjone@126.com
-Home Page:[Home Page](https://czjone.cnblogs.com)
+# Contact us
+* QQ:371741579
+* email:czjone@126.com
+* Home Page:[Home Page](https://czjone.cnblogs.com)
