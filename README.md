@@ -26,12 +26,15 @@
  * install xcode and xcode commandline for suport gcc and g++ and gdb.
  
  2. build
- * run script
-  $ ppath=..
-  $ cd ${ppath}
-  $ sh build.sh
+ 
+ run script:
+ 
+  ppath=..
+  cd ${ppath}
+  sh build.sh
 
 # Windows
+
 1. dependent soft.
 * install gcc and g++ and cmake with cygwin on wondow 7 or later.
 
