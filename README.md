@@ -20,6 +20,16 @@
 # build
 
 # Mac OS
+ 1. System require
+ 
+ * install cmake and configure it for suport commandline.
+ * install xcode and xcode commandline for suport gcc and g++ and gdb.
+ 
+ 2. build
+ * run script
+  ppath=..
+  cd ${ppath}
+  sh build.sh
 
 # Windows
 1. dependent soft.
