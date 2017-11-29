@@ -1,5 +1,13 @@
 # FGCore
 
+1. about FGCore
+  * write with c++ 11
+  * cross-platform
+  * easy used
+  
+2. who used:
+    * Distributed server : https://github.com/czjone/FGServer
+    
 1. test dependent
 
 * [gtest](https://github.com/czjone/gtest-1.git) 
