@@ -27,9 +27,9 @@
  
  2. build
  * run script
-  >$ ppath=..
-  >$ cd ${ppath}
-  >$ sh build.sh
+  $ ppath=..
+  $ cd ${ppath}
+  $ sh build.sh
 
 # Windows
 1. dependent soft.
