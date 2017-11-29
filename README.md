@@ -17,15 +17,15 @@
 * install Cygwin and add home path to supports command line.s
 
 # Logs
-  -------------------------------------------
-  1. v0.0.2
+
+  [v0.0.2]
   * [modify] modify readme
-  -------------------------------------------
-  2. v0.0.1
+
+  [v0.0.1]
   * [add] add unite test with gtest.s
   * [add] add auto build script.
   * [add] add clsocket to my project.
-  -------------------------------------------
+ -
 
 # Contact us
 * QQ:371741579
