@@ -19,7 +19,7 @@
 
 # build
 
-# Mac OS
+### Mac OS ###
  1. System require
  
  * install cmake and configure it for suport commandline.
@@ -33,7 +33,7 @@
   cd ${ppath}
   sh build.sh
 
-# Windows
+### Windows ###
 
 1. dependent soft.
 * install gcc and g++ and cmake with cygwin on wondow 7 or later.
