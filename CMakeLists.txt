@@ -4,8 +4,9 @@ PROJECT(FGCore)
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/external
-  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/include
-  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/
+  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/include #gtest
+  ${CMAKE_CURRENT_SOURCE_DIR}/external/gtest/        #gtest
+  ${CMAKE_CURRENT_SOURCE_DIR}/external/clsocket/src  #clsocket
 )
 
 # set compile files by src folder.
@@ -25,6 +26,31 @@ set(GTEST_FGCORE_SRCS
 	external/gtest/src/gtest_main.cc
 )
 add_executable(FGCoreGTest ${GTEST_FGCORE_SRCS})
+
+#### for simple socket
+if(UNIX)
+    # linux / normal unix
+    add_definitions(-D_LINUX)
+    if(CYGWIN)
+        # Special Cygwin stuff here
+    elseif(APPLE)
+        # Special Apple stuff here
+        remove_definitions(-D_LINUX)
+        add_definitions(-D_DARWIN)
+    endif()
+elseif(WIN32)
+    add_definitions(-DWIN32)
+    SET(PROJECT_LIBS Ws2_32.lib)
+    if(MINGW)
+        # Special MINGW stuff here
+    elseif(MSVC)
+        # Special MSVC stuff here
+        add_definitions(-D_WINSOCK_DEPRECATED_NO_WARNINGS)
+    else()
+        # No idea what it is, but there's a good chance it's too weird.
+        MESSAGE( FATAL_ERROR "Using unknown WIN32 compiler... NOT. Please add to build system." )
+    endif()
+endif()
 
 # IF (APPLE)
 # 	add_compile_options(-x objective-c++)
