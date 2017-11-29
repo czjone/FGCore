@@ -6,7 +6,7 @@
   * easy used
   
 2. who used:
-    * Distributed server : https://github.com/czjone/FGServer
+  *  Distributed server : https://github.com/czjone/FGServer
     
 1. test dependent
 
