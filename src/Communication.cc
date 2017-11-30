@@ -67,7 +67,7 @@ Communication::Server::~Server(){
 }
 
 void Communication::Server::StartAsy(){
-
+	
 }
 
 void Communication::Server::Start(){

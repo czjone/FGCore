@@ -42,6 +42,8 @@
 
   [v0.0.2]
   * [modify] modify readme
+  * [modify] modify mac build script.
+  * [add]    add io tools. string toos, base 64 tools md5 tools
 
   [v0.0.1]
   * [add] add unite test with gtest.s

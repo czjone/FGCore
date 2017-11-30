@@ -11,8 +11,8 @@ typedef char 		   			FG_Byte;
 typedef short 					FG_Short;
 typedef int						FG_Int32;
 typedef unsigned  int  			FG_UInt32;
-typedef long long 				FG_Long;
-typedef unsigned  long long 	FG_ULong;
+typedef long long 				FG_Int64;
+typedef unsigned  long long 	FG_UInt64;
 typedef float					FG_Float;
 typedef double 					FG_Double;
 typedef bool 					FG_Bool;
@@ -22,8 +22,12 @@ typedef FG_Int32 				FG_State;
 typedef size_t 					FG_Size;
 typedef size_t 					FG_Cursor;
 
+typedef FG_UInt64				FG_Timer;
+
 #define FG_True	true
 #define FG_False false
+
+#define FG_UNINIT_VAL 			-0x00000001
 
 /** errors */
 #define FG_SUCCESS 				0x00000000

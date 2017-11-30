@@ -16,7 +16,8 @@ buildWithCmak() {
 	if [[ $ret == 0 ]]; then
 		echo "compile success!"
 	else
-		exit 1
+		echo "compile faile!"
+		exit -1
 	fi
 }
 
